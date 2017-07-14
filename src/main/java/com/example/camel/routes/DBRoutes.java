@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
  * Created by igori on 14.07.2017.
  */
 @Component
-public class FileToDBRoute extends RouteBuilder {
+public class DBRoutes extends RouteBuilder {
 
     @Autowired
     private BooksFormToJPAEntityConverter converter;
