@@ -57,6 +57,10 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-actuator</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
 
         <!-- Camel -->
         <dependency>
@@ -67,13 +71,28 @@
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-stream-starter</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.camel</groupId>
+            <artifactId>camel-jpa</artifactId>
+        </dependency>
         <!-- Adding this dependency magically adds type converters for all JAXB types -->
         <dependency>
             <groupId>org.apache.camel</groupId>
             <artifactId>camel-jaxb</artifactId>
         </dependency>
 
-        <!-- Generic -->
+        <!-- DB -->
+        <dependency>
+            <groupId>org.hsqldb</groupId>
+            <artifactId>hsqldb</artifactId>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+        </dependency>
+
+        <!-- Other -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
