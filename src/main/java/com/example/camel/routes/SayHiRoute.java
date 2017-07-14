@@ -9,12 +9,12 @@ import org.springframework.stereotype.Component;
  */
 
 @Component
-public class SayHiRoute  extends RouteBuilder {
-
+public class SayHiRoute extends RouteBuilder {
 
     @Override
     public void configure() throws Exception {
         from("timer:hello?period={{timer.period}}")
+                .autoStartup(false)
                 .transform(method("myBean", "saySomething"))
                 .to("stream:out");
     }
