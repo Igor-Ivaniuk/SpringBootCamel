@@ -15,7 +15,7 @@ public class StdoutProcessor implements Processor {
     @Override
     public void process(Exchange exchange) throws Exception {
         String body = exchange.getIn().getBody(String.class); //automatic type convert
-        log.info("In StdoutProcessor");
+        log.info("Processing file "+exchange.getIn().getHeader("OriginalFileName"));
         log.info(body);
     }
 }
