@@ -40,7 +40,7 @@ public class FileRoutes extends RouteBuilder {
                 .process(stdoutProcessor)
                 .bean(ParsedXmlObjectBean.class)
                 .to("stream:out") // One more log after author replacement
-                .to("direct://fileWriter") //One oute can have multiple outputs, they will be called in seqience by default
+                .to("direct://fileWriter") //One route can have multiple outputs, they will be called in sequence by default
                 .to("seda://databaseWriter")
         // direct endpoint directly calls other route within same Camel context
         // seda endpoint creates an in-memory queue for non-blocking calls, also within one Camel Context
