@@ -16,7 +16,7 @@ public class SayHiRoute extends RouteBuilder {
         from("timer:hello?period={{timer.period}}")
                 .routeId("supermegaroute") // Need to set route ID to be able to control it through Camel Context
                 .autoStartup(false)
-                .transform(method("myBean", "saySomething"))
+                .transform(method("myBean", "saySomething")) // You can reference the bean by name in context
                 .to("stream:out");
     }
 }
