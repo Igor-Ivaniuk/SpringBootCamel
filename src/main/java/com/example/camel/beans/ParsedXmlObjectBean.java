@@ -15,9 +15,15 @@ public class ParsedXmlObjectBean {
     // Camel will convert the XML string to POJO for us
     public BooksForm processParsedXML(BooksForm booksForm) {
         BookForm firstBook = booksForm.getBook().get(0);
+
+        BookForm newBook = new BookForm();
+        newBook.setAuthor("Igor Ivaniuk");
+        newBook.setTitle(firstBook.getTitle());
+        newBook.setGenre(firstBook.getGenre());
+        newBook.setId("book999");
+
         log.info("Book author: " + firstBook.getAuthor());
-        firstBook.setAuthor("Igor Ivaniuk");
-        booksForm.getBook().add(firstBook);
+        booksForm.getBook().add(newBook);
         return booksForm;
     }
 }
